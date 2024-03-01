@@ -1,0 +1,70 @@
+Feb - 9th - 2023
+
+At 3pm, started studying about the algorithm, couldn't find any specific videos on youtube, found some articles on google and
+currently understanding those articles with chatGPT.
+
+"""
+Zero-mean Normalized Cross Correlation (ZNCC) is an algorithm used for comparing two images to determine how similar they are,
+basic idea is that we slide a template image over the target image in a sliding window manner, checking for resemblances/corr-
+-relations.
+
+"""
+
+Feb - 10th - 2023
+
+Installing required software (Xcode) for openCL on mac m1 
+
+Feb - 22nd - 2023 
+
+Understanding the algorithm. 
+B -> Window-size 
+I_l = left-image
+I_R = right-image
+I_L_Bar, I_R_Bar = averages 
+d = disparity (0 to d)
+
+We have 2 different images -> Template and Target 
+
+We initially slide the window over the template along the target pixel to check for comparisions, we have 'd' which is used for
+creating displacement in the pixels of the target image: eg, think of two images from 2 different cameras slightly different
+angle like 1st cam is at 0,0 and 2nd is at 0,2 if we take 2 pics from these we will have a displacement of 2 in between the 
+cameras and therefore the angles would be slightly different now when we check for similariies in the images we would settle the 
+difference using the 'd' element. 
+
+The window size is similar to how filters work in convolutions. Averaging is used so we can detect important features in the images
+such that the whiter portions will have a higher value so rather than considering the entire image as bright we would only 
+consider the bright features to be bright. Which will help in finding key features. Also we do not take the average of the entire
+image but only the region around the pixel.
+
+Numerator: Calculates the cross co-relation between pixl values within each window. 
+Denominator: Normalizes
+
+Completed the implementation of ZNCC in python today, will transfer to C++ later on, followed the pseudo code and formula given
+in exercise notes. (Tested it with a custom matrix representation of image and is giving me a matrix of all ones since i have 
+both template and target as same):
+                                template_image = [
+                                [1, 2, 33, 41],
+                                [10, 2, 25, 1],
+                                [9, 15, 5, 20],
+                                [22, 1, 1, 24],
+                            ]
+                                target_image = [
+                                [1, 2, 33, 41],
+                                [10, 2, 25, 1],
+                                [9, 15, 5, 20],
+                                [22, 1, 1, 24],
+                            ]
+                                computed_zncc = [
+                                [1. 1. 1. 1.],
+                                [1. 1. 1. 1.],
+                                [1. 1. 1. 1.],
+                                [1. 1. 1. 1.],
+                            ]
+
+Feb 28 -> Finally installed openCL on the mac after trying for days to get the xcode and finding headerfile, wrote a helloworld script
+Feb 29 -> checked out some openCL tutorials but turns out chatGPT is way faster at teaching with appropriate code examples. 
+March 1st -> Converted my python zncc algorithm to C++, took a long time. Then did the matrix addition task. However, for the image
+part I couldn't find the header file in my PC and instead got stb-image headerfile but it is giving errors so they still need to get
+resolved while I did write the code for kernel command to turn the rgb image to grayscale but due to errors havent checked it yet.
+
+Finally, implemented profiling in the C++ algorithm using chrono headerfile. Quite easy. 
