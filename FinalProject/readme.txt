@@ -2,7 +2,7 @@
 
 ---- Folder descriptions and commands that I used to run for Mac -----
 
-- Python_implementation_results and cpp_results: These folders contain python implementation and               c++ / python experimentations and output images along with parameters.
+- Python_implementation_results and cpp_results: These folders contain python implementation and c++ / python experimentations and output images along with parameters.
 
 - hello_world || image_processing || matrix_addition: These are all the sub-tasks from the guide
 
