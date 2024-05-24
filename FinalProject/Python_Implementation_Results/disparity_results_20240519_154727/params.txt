@@ -1,0 +1,7 @@
+
+Parameters
+-------------
+patch_size: 23
+image_downsample_factor: 4
+max_disparity: 65
+cross_checking_threshold: 150
