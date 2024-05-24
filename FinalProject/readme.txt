@@ -1,3 +1,5 @@
+--------------------FINAL PROJECT SUBMISSION---------------------------
+
 ---- Folder descriptions and commands that I used to run for Mac -----
 
 - Python_implementation_results and cpp_results: These folders contain python implementation and               c++ / python experimentations and output images along with parameters.
