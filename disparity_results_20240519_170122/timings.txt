@@ -1,0 +1,16 @@
+Total Time: 2789.69510341 seconds
+Read Left Image Time: 0.12850857 seconds
+Read Right Image Time: 0.12776518 seconds
+Resize Left Image Time: 0.00001216 seconds
+Resize Right Image Time: 0.00000191 seconds
+Disparity Map Left Calculation Time: 1394.00075436 seconds
+Disparity Map Right Calculation Time: 1393.11724019 seconds
+Depth Map Calculation Time: 0.12069106 seconds
+Cross-Checking Time: 0.15085220 seconds
+
+Parameters
+-------------
+patch_size: 49
+image_downsample_factor: 4
+max_disparity: 65
+cross_checking_threshold: 8
